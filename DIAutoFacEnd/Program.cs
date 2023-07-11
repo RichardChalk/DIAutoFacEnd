@@ -4,10 +4,7 @@ using WithDI;
 
 var myContainerBuilder = new ContainerBuilder();
 
-myContainerBuilder.RegisterType<ConsoleNotification>()
-    .As<INotificationService>();
-myContainerBuilder.RegisterType<UserService>()
-    .AsSelf();
+myContainerBuilder.RegisterModule<ProgramModule>();
 
 var myContainer = myContainerBuilder.Build();
 
